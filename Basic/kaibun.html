@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script>
+      function kaibun(){
+        let result = "";
+        let str = document.getElementById("source").value;
+        let string = document.getElementById("source").value;
+        for (let i = 0; i < str.length; i++){
+          // 文字列のindexは0から始まるため、"length - 1"という記述。
+          let pos = str.length - i- 1;
+          result += str.charAt(pos);
+        }
+        document.getElementById("result").textContent = result;
+        document.getElementById("string").textContent = string.charAt(1);
+      }
+    </script>
+  </head>
+  <body>
+    <input id="source">
+    <button onclick="kaibun()">回文</button>
+    <p id="result"></p>
+    <p id="string"></p>
+  </body>
+</html>
