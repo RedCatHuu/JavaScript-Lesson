@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script>
+      Array.prototype.shuffle = function(){
+        let i = this.length;
+        // while文
+        // while(i){
+        //   let j = Math.floor(Math.random() * i);
+        //   let tmp = this[--i];
+        //   this[i] = this[j];
+        //   this[j] = tmp;
+        // }
+        // for文
+        for (i = i - 1 ; i > 0; i--){
+          let j = Math.floor(Math.random() * i);
+          let tmp = this[i];
+          this[i] = this[j];
+          this[j] = tmp;
+        }
+        return this;
+      };
+      
+      function shuffle(){
+        let cards = [1,1,2,2,3,3,4,4,5,5,6,6];
+        cards.shuffle();
+        document.getElementById("result").innerText = cards.join(",");
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="shuffle()">シャッフル</button>
+    <p id="result"></p>
+  </body>
+</html>
