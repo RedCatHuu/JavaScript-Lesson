@@ -6,27 +6,37 @@
   <body>
     <button id="start" onclick="startTimer()">スタート</button>
     <button onclick="stopTimer()">ストップ</button>
-    <h2 id="counter"></h2>
+    <h2 id="counter">0</h2>
+    <h2 id="counterMilli">0</h2>
     
     <!--scriptがhead内にあると、documentを呼び込む前に"getElementById("start")"を実行してしまい読み込むことができないため、ダメ。-->
     <script>
       let timerId = null;
+      let timerMilli = null;
       let count = 0;
+      let countMilli = 0;
       let startBtn = document.getElementById("start");
       
-      function startTimer(e){
+      function startTimer(){
         timerId = setInterval(tick, 1000);
+        timerMilli = setInterval(tickMilli, 100);
         startBtn.disabled = true;
       }
       
       function stopTimer(){
         clearInterval(timerId);
+        clearInterval(timerMilli);
         startBtn.disabled = false;
       }
       
       function tick(){
         count++;
         document.getElementById("counter").textContent = count;
+      }
+      
+      function tickMilli(){
+        countMilli++
+        document.getElementById("counterMilli").textContent = countMilli;
       }
     </script>
   </body>
