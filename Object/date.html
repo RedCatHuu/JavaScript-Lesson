@@ -1,27 +1,62 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <script>
-      function update(){
-        let now = new Date();
-        document.getElementById("year").textContent = now.getFullYear();
-        document.getElementById("month").textContent = now.getMonth() + 1;
-        document.getElementById("date").textContent = now.getDate();
-        document.getElementById("hour").textContent = now.getHours();
-        document.getElementById("min").textContent = now.getMinutes();
-        document.getElementById("sec").textContent = now.getSeconds();
-        document.getElementById("msec").textContent = now.getMilliseconds();
-      }
-    </script>
   </head>
   <body onload="update()">
     <p>
-      <span id="year"></span>年 <span id="month"></span>月
-      <span id="date"></span>日 <span id="hour"></span>時
-      <span id="min"></span>分 <span id="sec"></span>秒
+      <span id="year"></span>年
+      <span id="month"></span>月
+      <span id="date"></span>日
+      <span id="hour"></span>時
+      <span id="min"></span>分
+      <span id="sec"></span>秒
       <span id="msec"></span>ミリ
     </p>
+    
+    <p id="keisoku" style="display: none;">計測中</p>
+    <p id="counter">
+      <span id="second"></span>秒
+      <span id="msecond"></span>ミリ
+    </p>
+    
     <button onclick="update()">更新</button>
+    <button onclick="start()">スタート</button>
+    <button onclick="stop()">ストップ</button>
+    
+    <script>
+      function update(){
+        let date = new Date();
+        document.getElementById("year").textContent = date.getFullYear();
+        document.getElementById("month").textContent = date.getMonth() + 1;
+        document.getElementById("date").textContent = date.getDate();
+        document.getElementById("hour").textContent = date.getHours();
+        document.getElementById("min").textContent = date.getMinutes();
+        document.getElementById("sec").textContent = date.getSeconds();
+        document.getElementById("msec").textContent = date.getMilliseconds();
+      }
+      
+      let time = null;
+      let now = null;
+      let keisoku = document.getElementById("keisoku");
+      let counter = document.getElementById("counter");
+      
+      function start(){
+        now = new Date();
+        keisoku.style.display = "block";
+        counter.style.display = "none";
+      }
+      
+      function stop(){
+        let elapsed = new Date() - now;
+        let seconds = Math.floor(elapsed / 1000);
+        let milliseconds = elapsed % 1000;
+        
+        document.getElementById("second").textContent = seconds;
+        document.getElementById("msecond").textContent = milliseconds;
+        keisoku.style.display = "none";
+        counter.style.display = "block";
+      }
+    </script>
   </body>
 </html>
