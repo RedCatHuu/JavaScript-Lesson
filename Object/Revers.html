@@ -1,0 +1,47 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      #board{
+        background-color: black;
+      }
+      td.cell{
+        background-color: green;
+        width: 30px;
+        height: 30px;
+      }
+      
+    </style>
+    <script>
+      function init(){
+        let b = document.getElementById("board");
+        for (let i = 0; i < 8; i++){
+          let tr = document.createElement("tr");
+          for (let j = 0; j < 8; j++){
+            let td = document.createElement("td");
+            td.className = "cell";
+            td.id = "cell" + i + j;
+            td.onclick = clicked;
+            tr.appendChild(td);
+          }
+          b.appendChild(tr);
+        }
+      }
+      function clicked(e){
+        document.getElementById("info").textContent = e.target.id + " clicked";
+      }
+    </script>
+  </head>
+  <body onload="init()">
+    <table id="board"></table>
+    <h2 id="info"></h2>
+    <table style="background-color: blue">
+      <tr>
+        <td style="height: 30px; width: 30px; background-color: red"></td>
+        <td style="height: 30px; width: 30px; background-color: red"></td>
+        <td style="height: 30px; width: 30px; background-color: red"></td>
+      </tr>
+    </table>
+  </body>
+</html>
