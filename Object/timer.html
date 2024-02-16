@@ -1,0 +1,33 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <button id="start" onclick="startTimer()">スタート</button>
+    <button onclick="stopTimer()">ストップ</button>
+    <h2 id="counter"></h2>
+    
+    <!--scriptがhead内にあると、documentを呼び込む前に"getElementById("start")"を実行してしまい読み込むことができないため、ダメ。-->
+    <script>
+      let timerId = null;
+      let count = 0;
+      let startBtn = document.getElementById("start");
+      
+      function startTimer(e){
+        timerId = setInterval(tick, 1000);
+        startBtn.disabled = true;
+      }
+      
+      function stopTimer(){
+        clearInterval(timerId);
+        startBtn.disabled = false;
+      }
+      
+      function tick(){
+        count++;
+        document.getElementById("counter").textContent = count;
+      }
+    </script>
+  </body>
+</html>
