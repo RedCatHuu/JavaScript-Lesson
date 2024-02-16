@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <script>
+    /* Fisher-Yates法は、一度入れ替えた個所が入れ替わることはない。配列の最後尾から位置を入れ替えるため。*/
       Array.prototype.shuffle = function(){
         let i = this.length;
         // while文

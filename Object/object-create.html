@@ -1,0 +1,23 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script>
+      let colors = ["red", "blue", "green", "yellow", "purple"];
+      let index = 0;
+      function insert(){
+        let parent = document.getElementById("mylist");
+        let item = document.createElement("li");
+        item.textContent = colors[index];
+        item.style.color = colors[index];
+        // colors.lengthで割った余りを代入することで0-4を繰り返す。単に"++index"だとずっと増加する。
+        index = ++ index % colors.length;
+        parent.appendChild(item);
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="insert()">挿入</button>
+    <ol id="mylist"></ol>
+  </body>
+</html>
