@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+    
+      // window.onload = init;
+      // function init(){
+      //   let h = document.getElementById("title");
+      //   h.textContent = "はじめまして";
+      // }
+      
+      // 無名関数
+      // window.onload = function(){
+      //   let h = document.getElementById("title");
+      //   h.textContent = "はじめまして";
+      // }
+      
+      // DOMContentLoadedイベントにハンドラを登録
+      document.addEventListener("DOMContentLoaded", function(){
+        let h = document.getElementById("title");
+        h.textContent = "はじめまして";
+      });
+    </script>
+  </head>
+  <body>
+    <h1 id="title">こんにちは</h1>
+  </body>
+</html>
