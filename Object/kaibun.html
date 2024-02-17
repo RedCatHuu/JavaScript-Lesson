@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script>
+      let data = [
+        { str: "タケヤブ　ヤケタ", jpn: "竹藪焼けた"},
+        { str: "タケムラタケコ　コケタラムケタ", jpn: "竹村武子こけたら剥けた"},
+        { str: "ナタデココ　デタナ", jpn: "ナタデココ出たな"},
+        { str: "イカノダンスハスンダノカイ", jpn: "烏賊のダンスは済んだのかい"},
+        { str: "ヨノナカネ　カオカオカネカナノヨ", jpn: "世の中ね顔かお金かなのよ"},
+      ];
+      
+      let timerId = null;
+      let index = -1;
+      let pos = 0;
+      
+      function start(){
+        pos = 0;
+        document.getElementById("jpn").textContent = "";
+        // ループ
+        index = (index + 1) % data.length;
+        // 途中でスタートボタンを押したときにリセットするため。
+        clearInterval(timerId);
+        timerId = setInterval(tick, 200);
+      }
+      
+      function tick(){
+        let str = data[index].str;
+        document.getElementById("str").textContent = str.substr(0, pos);
+        if (++pos > str.length){
+          clearInterval(timerId);
+          document.getElementById("jpn").textContent = data[index].jpn;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="start()">スタート</button>
+    <h2 id="str"></h2>
+    <h2 id="jpn"></h2>
+  </body>
+</html>
