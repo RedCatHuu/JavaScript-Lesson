@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script>
+      function add(a, b){
+        return a + b;
+      }
+      
+      function mul(a, b){
+        return a * b;
+      }
+      
+      // 関数の代入
+      let calculator = add;
+      let x = calculator(2, 3); // x=5
+      calculator = mul;
+      let y = calculator(2, 3); // y=6
+      
+      calculator = function div(a, b){
+        return a / b;
+      };
+      let z = calculator(3, 2); // z=1.5
+      let a = x;
+      
+      function Person(name, energy){
+        this.name = name;
+        this.energy = energy;
+        this.run = function(){
+          this.energy -=10;
+        };
+        this.sayHello = function(){
+          console.log("Hi!" + this.name);
+        };
+      }
+      
+      let p = new Person("Tanaka", 100);
+      p.run(); //energyが10減る
+      p.sayHello(); // "Hi! Tanaka"と表示される
+      
+      // 例1
+      let data = [1,8, 0, 6, 3, 4, 9, 2];
+      data.sort(function(a, b){
+        return a - b;
+      });
+      data; // [0, 1, 2, 3, 4, 6, 7, 9]
+      
+      // 例2
+      data.sort(function(a, b){
+        return b - a;
+      });
+      data; // [9, 8, ,6 4, 3, 2, 1, 0]
+      
+      // 例3
+      function mysort(a, b){
+        return a - b;
+      }
+      data.sort(mysort);
+      data; // [0, 1, 2, 3, 4, 6, 8, 9]
+      
+      data = ["hu", "hello", "say", "yes!"];
+      data.sort(function (a, b){
+        return a.length - b.length;
+      });
+      data; // hi, say, yes!, hello
+      
+      data = [
+        { name: "Joe", age: 34 },
+        { name: "Sam", age: 29 },
+        { name: "Todd", age: 45 },
+        { name: "Bill", age: 18 },
+        ];
+        data.sort(function(a, b){
+          return a.age - b.age;
+      });
+      data; // Bill→Sam→Joe→Todd
+      
+      
+      let num = [1,8, 0, 6, 3, 4, 9, 2];
+      let newNum = num;
+      num.sort();
+      console.log(num);
+      console.log(newNum);
+        
+    </script>
+  </head>
+</html>
