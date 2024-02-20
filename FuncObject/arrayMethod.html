@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script>
+      let data = [2, 5, 4, 7, 1, 6];
+      delete data[3];
+      // data[3]を飛ばす
+      data.forEach(function(val, index){
+        console.log("[" + index + "]=" + val);
+      });
+      // data[3]をundefindで返す
+      for (let i = 0; i < data.length; i++){
+        console.log("[" + i + "]=" + data[i]);
+      }
+      
+      // Array.prototype.every
+      data = [2, 5, 4, 7, 1, 6];
+      
+      let r0 = data.every(function(e){
+        return e < 6;
+      }); // r0 = false
+      
+      let r1 = data.every(function(e) {
+        return e < 10;
+      }); // r1 = true
+      
+      let r2 = data.every(function(e){
+        return e > 0;
+      }) // r2 = true
+      
+      // Array.prototype.some
+      data = [2, 5, 4, 7, 1, 6];
+      
+      let s0 = data.some(function(e){
+        return e < 6;
+      }); // s0 = true
+      
+      let s1 = data.some(function(e){
+        return e > 7;
+      }); // s1 = false
+      
+      let s2 = data.some(function(e){
+        return e > 6;
+      }); // s2 = true
+      
+      // Array.prototype.filter
+      data = [2, 5, 4, 7, 1, 6];
+      
+      let f0 = data.filter(function(e){
+        return e % 2 == 0;
+      }); // f0 = [2, 4, 6]
+      
+      let f1 = data.filter(function(e){
+        return e % 2 == 1;
+      }) // f1 = [5,7,1]
+      
+      let f2 = data.filter(function(e){
+        return e <= 4;
+      }) // f2 = [2,4,1]
+      
+      // sort
+      data = [1, 8, 0, 6, 3, 4, 9, 2];
+      
+      data.sort(function(a, b){
+        return a - b;
+      }); // 昇順
+      
+      data.sort(function(a, b){
+        return b - a;
+      }); // 降順
+      
+      //関数名を明示する場合
+      function mySort(a, b){
+        return a - b;
+      }
+      data.sort(mySort);// 昇順
+      
+      data = ["hi", "hello", "say", "yes!"];
+      data.sort(function(a, b){
+        return a.length - b.length;
+      }); // ['hi', 'say', 'yes!', 'hello']
+      
+      let data1 = [
+        {name: "Joe", age: 34},
+        {name: "Sam", age: 29},
+        {name: "Todd", age: 45},
+        {name: "Bill", age: 18}
+      ]
+      data1.sort(function(a, b){
+        return a.age - b.age
+      })
+      
+    </script>
+  </head>
+</html>
