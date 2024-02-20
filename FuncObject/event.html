@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script>
+      //　無名関数
+      // window.onkeydown = function(e){
+      //   document.getElementById("result").textContent = "keydown:" + e.keyCode;
+      // }
+      
+      function myKeydown(e){
+        document.getElementById("result").textContent = "keydown:" + e.keyCode;
+      }
+      window.onkeydown = myKeydown;
+      
+      // クリックのイベントハンドラー
+      document.onclick = function(e){
+        console.log("document.onclick" + e.type);
+      };
+      
+      // マウス押下のイベントハンドラー
+      document.onmousedown = mymousedown;
+      function mymousedown(e){
+        console.log("document.onclick" + e.type);
+      }
+      
+      function init(){
+        console.log("init");
+      }
+    </script>
+  </head>
+  <body onload="init()">
+    <p id="result"></p>
+  </body>
+</html>
