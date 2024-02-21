@@ -91,6 +91,28 @@
         return a.age - b.age
       })
       
+      // 型変換
+      let val = "1 2 3";
+      let splitArray = val.split(" ");
+      console.log("split: " + splitArray); // [1, 2, 3]
+      let joinedString = splitArray.join(" ");
+      console.log("join: " + joinedString); // "1 2 3"
+      
+      splitArray.push("2");
+      console.log(splitArray); // ['1', '2', '3', '2']
+      
+      splitArray.pop();
+      console.log(splitArray); // ['1', '2', '3']
+      
+      let ary = [...splitArray];
+      console.log(ary); // ['1', '2', '3']
+      
+      ary[0] = "4";
+      console.log(ary); // ['4', '2', '3']
+      console.log(splitArray); // ['1', '2', '3']
+      
+      
+      
     </script>
   </head>
 </html>

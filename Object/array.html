@@ -14,16 +14,19 @@
         // let r = data.push(v)
       }
       
+      //配列の最後の要素を削除
       function pop(){
         let r = data.pop();
         update(r);
       }
       
+      // 先頭の要素を削除
       function shift(){
         let r = data.shift();
         update(r);
       }
       
+      // splice(index, howMany) indexからhowMany個分の要素を削除
       function splice(){
         let r = data.splice(3, 2);
         update(r);

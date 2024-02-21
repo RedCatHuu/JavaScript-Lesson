@@ -23,6 +23,19 @@
         
         ctx.strokeRect(500, 100, 100, 150);
       }
+      
+      let result = 0;
+      for (let i = 7; i <= 7777777; i++){
+        if(i % 7 == 0 && i.toString().indexOf("7") != -1){
+          let array = Array.from(String(i));
+          result += array.filter(function(e){
+            return e == "7";
+          }).length;
+          
+        }
+      }
+      console.log("数は" + result);
+      
     </script>
   </head>
   <body onload="init()">
