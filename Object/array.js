@@ -69,5 +69,7 @@ console.log(a && b)
 
 // aがtrueならaを返す、aがfalseならbを返す
 // let [c, d] = [0, 1] // 1
-let [c, d] = [2, 0] // 2
+let [c, d] = [-2, 0] // 2
 console.log(c || d)
+console.log(c > d)
+
