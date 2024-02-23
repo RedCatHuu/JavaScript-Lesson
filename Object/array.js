@@ -59,4 +59,15 @@ console.log(setAry); // Set(7) { 1, 2, 3, 4, 5, 6, 7 }
 let reAry = Array.from(setAry);
 console.log(reAry); // [1, 2, 3, 4, 5, 6, 7]
 
+// aがfalseならaを返す、aがtrueならbを返す
+// let [a, b] = [0, 0]
+// let [a, b] = [0, 1] //0
+// let [a, b] = [1, 0] // 0
+// let [a, b] = [3, 0] // 0
+let [a, b] = [3, 2] // 2
+console.log(a && b)
 
+// aがtrueならaを返す、aがfalseならbを返す
+// let [c, d] = [0, 1] // 1
+let [c, d] = [2, 0] // 2
+console.log(c || d)
