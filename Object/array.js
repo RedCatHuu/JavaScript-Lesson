@@ -114,3 +114,19 @@ console.log(setNums)
 let strings = "##asg#gg###g#hh#g"
 let simplifiedStrings = strings.split('').filter((char, index, ary) => char !== '#' || ary[index + 1] !== '#');
 console.log( simplifiedStrings.join("") ); // #asg#gg#g#hh#g
+
+// フィボナッチ数列
+function fib(n) {
+  const result = [0, 1]; 
+
+  for (let i = 0; i < n - 1; i++) {
+    const a = result[i];
+    const b = result[i + 1];
+
+    result.push(a + b);
+  }
+  return result
+}
+
+console.log(fib(4)[4])
+
