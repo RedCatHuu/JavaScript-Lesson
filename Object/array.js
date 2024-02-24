@@ -73,3 +73,44 @@ let [c, d] = [-2, 0] // 2
 console.log(c || d)
 console.log(c > d)
 
+// 配列内要素の削除
+var items = ['リンゴ', 'メロン', 'イチゴ', 'スイカ'];
+
+//splice(開始位置, 要素数)
+items.splice( 1, 1 );
+console.log( items ); // [ 'リンゴ', 'イチゴ', 'スイカ' ]
+
+// 第三引数を設定することで置換もできる
+items.splice(1, 1, "ブドウ")
+console.log(items); // [ 'リンゴ', 'ブドウ', 'スイカ' ]
+
+// filter関数を使ったちょふくの削除
+let nums = [3,2,2,4,8,8,8,6,9];
+let filterdNums = nums.filter( (val, index, ary) => {
+  console.log(ary.indexOf(val) + ":" + index)
+})
+/* 
+0:0
+1:1
+1:2
+4:4
+4:5
+4:6
+7:7
+8:8
+val とindexが一致しているものだけを取り出せば重複を除去できる。*/
+
+let nums2 = [3,2,2,4,8,8,8,6,9];
+let filterdNums2 = nums2.filter( (val, index, ary) => {
+  return ary.indexOf(val) == index
+})
+console.log(filterdNums2); // [ 3, 2, 4, 8, 6, 9 ]
+
+let setNums = new Set(nums2) // Set(6) { 3, 2, 4, 8, 6, 9 }セット使うほうが早いけど
+console.log(setNums)
+
+// filterを使った特定の文字の削除
+// 連続した"#"を削除している。
+let strings = "##asg#gg###g#hh#g"
+let simplifiedStrings = strings.split('').filter((char, index, ary) => char !== '#' || ary[index + 1] !== '#');
+console.log( simplifiedStrings.join("") ); // #asg#gg#g#hh#g
