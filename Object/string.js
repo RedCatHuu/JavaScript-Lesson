@@ -94,3 +94,26 @@ function replaceUL(str){
     return swappedStr;
   }
 console.log( replaceUL("Hello World") ); // "hELLO wORLD"
+
+
+// for of
+let str = "a,b,c";
+let newStr = str.split(",");
+for(let c of newStr){
+  console.log(c);
+}
+// a
+// b
+// c
+
+// 切り取り
+let date = "1212/12/12 12:12";
+let y = date.substring(0, 4);
+let M = date.substring(5, 7);
+let d = date.substring(8, 10);
+let h = date.substring(11, 13);
+let m = date.substring(14);
+
+console.log(y, M, d, h, m); // 1212 12 12 12 12
+
+console.log( date.replace(" ", "/").replace(":", "/").split("/").join(" ") ); // 1212 12 12 12 12
