@@ -33,6 +33,9 @@ console.log(newStrings); // Banana Lemon Lemon
 newStrings = strings.replace(/lemon/ig, "Banana");
 console.log(newStrings); // Banana Banana Banana
 
+newStrings = strings.replace(/[aeiou]/ig, "");
+console.log(newStrings); // Lmn Lmn Lmn
+
 
 
 // 文字列の切り出し

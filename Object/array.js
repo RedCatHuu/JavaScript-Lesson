@@ -130,3 +130,11 @@ function fib(n) {
 
 console.log(fib(4)[4])
 
+// for of
+let display = ["1st", "2nd", "3rd"]
+for(let item of display){
+  console.log(item)
+}
+// 1st
+// 2nd
+// 3rd
