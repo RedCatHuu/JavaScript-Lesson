@@ -117,3 +117,24 @@ let m = date.substring(14);
 console.log(y, M, d, h, m); // 1212 12 12 12 12
 
 console.log( date.replace(" ", "/").replace(":", "/").split("/").join(" ") ); // 1212 12 12 12 12
+
+// Leet
+let str4 = "abcdefghijklmnopqrstuvwxyz";
+let a = str4.replace(/a/ig, "4").replace(/e/ig, "3").replace(/g/ig, "6").replace(/i/ig, "1").replace(/o/ig, "0").replace(/s/ig, "5").replace(/z/ig, "2");
+console.log(a); // 4bcd3f6h1jklmn0pqr5tuvwxy2
+
+let replacements = {
+  "a" : "4",
+  "e" : "3",
+  "g" : "6",
+  "i" : "1",
+  "o" : "0",
+  "s" : "5",
+  "z" : "2"
+};
+
+for ( let char in replacements){
+  let regex = new RegExp(char, "ig");
+  str4 = str4.replace(regex, replacements[char]);
+}
+console.log(str4); // 4bcd3f6h1jklmn0pqr5tuvwxy2
