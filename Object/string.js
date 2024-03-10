@@ -138,3 +138,14 @@ for ( let char in replacements){
   str4 = str4.replace(regex, replacements[char]);
 }
 console.log(str4); // 4bcd3f6h1jklmn0pqr5tuvwxy2
+
+// 10進数をn進数に変換
+let n = 11;
+console.log( n.toString(2) ); // 1011
+console.log( n.toString(3) ); // 102
+
+// n進数を10進数に変換
+n = "1011";
+console.log( parseInt(n, 2) ); // 11
+n = "102";
+console.log( parseInt(n, 3) ); // 11
