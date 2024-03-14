@@ -138,3 +138,24 @@ for(let item of display){
 // 1st
 // 2nd
 // 3rd
+
+const ary = ["2 84 12", "35 69 37", "20 31 54", "2 3 49 34", "34"];
+
+ary.forEach( (item) => {
+  console.log(item);
+});
+/*2 84 12
+35 69 37
+20 31 54
+2 3 49 34
+34*/
+
+
+ary.forEach((item, index) => {
+    if (item.split(" ").every(num => parseInt(num) >= 20)) {
+        console.log(index + ":" + item);
+    }
+});
+// 1:35 69 37
+// 2:20 31 54
+// 4:34
