@@ -149,3 +149,10 @@ n = "1011";
 console.log( parseInt(n, 2) ); // 11
 n = "102";
 console.log( parseInt(n, 3) ); // 11
+
+// 文字列を文字と数字に分ける
+const typeAndScore = "bunkei 89 70 89 21";
+const [type, ...scores] = typeAndScore.split(" ");
+const [en, ja, so, ma] = scores.map(Number);
+console.log(scores); // [ '89', '70', '89', '21' ]
+console.log(type, en, ja, so, ma); // bunkei 89 70 89 21
