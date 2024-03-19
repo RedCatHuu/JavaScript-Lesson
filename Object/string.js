@@ -156,3 +156,34 @@ const [type, ...scores] = typeAndScore.split(" ");
 const [en, ja, so, ma] = scores.map(Number);
 console.log(scores); // [ '89', '70', '89', '21' ]
 console.log(type, en, ja, so, ma); // bunkei 89 70 89 21
+
+
+// 文字コード
+console.log( String.fromCharCode(97), String.fromCharCode(122) ); // a z
+console.log( "A".charCodeAt(0), "Z".charCodeAt(0) ); // 65 90
+
+// 文字をn文字ずらす
+const str5 = "ABC";
+const nmoji = 3;
+const alfa = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let res = "";
+
+// 右にnmojiずらす。
+for(let item of str5){
+  const index = alfa.indexOf(item);
+  const newIndex = (index + nmoji ) % 26;
+  res += alfa[newIndex];
+}
+console.log(res); // DEF
+
+// 左にnmojiずらす
+res = "";
+for(let item of str5){
+  const index = alfa.indexOf(item);
+  const newIndex = (index - nmoji + 26 ) % 26;
+  res += alfa[newIndex];
+}
+console.log( res ); // XYZ
+
+// 文字の反転
+console.log( "ABC".split("").reverse().join("") ); // CBA
