@@ -161,3 +161,29 @@ ary.forEach((item, index) => {
 // 4:34
 
 
+// 配列の作成
+const ary2 = new Array(5).fill(0);
+console.log( ary2 ); // [ 0, 0, 0, 0, 0 ]
+
+
+// 出現回数カウント
+const ary3 = ["a", "a", "b", "j", "k", "a", "i", "b", "i"];
+let obj = {};
+for(let item of ary3){
+  obj[item] = (obj[item] || 0) + 1;
+}
+console.log(obj); // [ a: 3, b: 2, j: 1, k: 1, i: 2 ]
+
+
+// some every
+const ary1 = [0, 0, 1, 1, 2];
+console.log( ary1.some( val => val >= 2 )); // true
+console.log( ary1.every( val => val >= 0 )); // true
+
+
+// スコアが0未満になる場合、0を返す。
+function verifyScore(score, minus){
+  return Math.max(score - minus, 0);
+}
+console.log( verifyScore(90, 40) ); // 50
+console.log( verifyScore(30, 40)); // 0
