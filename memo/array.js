@@ -176,7 +176,7 @@ console.log(obj); // [ a: 3, b: 2, j: 1, k: 1, i: 2 ]
 
 
 // some every
-const ary1 = [0, 0, 1, 1, 2];
+let ary1 = [0, 0, 1, 1, 2];
 console.log( ary1.some( val => val >= 2 )); // true
 console.log( ary1.every( val => val >= 0 )); // true
 
@@ -187,3 +187,14 @@ function verifyScore(score, minus){
 }
 console.log( verifyScore(90, 40) ); // 50
 console.log( verifyScore(30, 40)); // 0
+
+// mapの練習
+let ary4 = ary1.map(val => val + 1);
+console.log(ary4); // [ 1, 1, 2, 2, 3 ]
+
+let ary5 = ary4.map( val =>{
+  val *= 2;
+  val += 1;
+  return val
+})
+console.log( ary5 ); // [ 3, 3, 5, 5, 7 ]
