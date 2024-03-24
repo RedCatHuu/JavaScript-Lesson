@@ -165,6 +165,20 @@ ary.forEach((item, index) => {
 const ary2 = new Array(5).fill(0);
 console.log( ary2 ); // [ 0, 0, 0, 0, 0 ]
 
+// 0から100までの数字の配列の作成
+let ary6 = [];
+for(let i = 1; i <= 100; i++){ 
+    ary6.push(i);
+}
+// または、
+let ary7 = Array.from({ length: 100 }, (_, i) => i + 1);
+// [ 1, 2..., 100]
+
+// a~zの配列作成
+const alphabetArray = Array.from({ length: 26 }, (_, i) => String.fromCharCode(97 + i));
+console.log( alphabetArray ); // [ 'a', 'b'... 'z']
+
+
 
 // 出現回数カウント
 const ary3 = ["a", "a", "b", "j", "k", "a", "i", "b", "i"];
